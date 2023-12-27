@@ -9,7 +9,9 @@ class FormUser(models.Model):
     )
     email = models.EmailField(
         verbose_name="Почта",
-        null=False
+        null=False,
+        unique=True,               # unique - уникальное поле
+        db_index=True              # db_index - фильтрация и поиск в базе данных
     )
     age = models.IntegerField(
         verbose_name="Возраст",
