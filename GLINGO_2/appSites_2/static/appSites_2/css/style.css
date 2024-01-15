@@ -1,0 +1,115 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.header {
+    width: 100%;
+    background-color: rgb(108, 234, 243);
+}
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1440px;
+    margin: 0 auto;
+    height: 6.333vw;
+}
+
+.header__content .logo {
+    width: 6.667vw;
+    margin-left: 2.667vw;
+}
+.header__content .menu a {
+    text-decoration: none;
+    font-family: 'Segoe UI';
+    font-size: 10px;
+    font-weight: 500;
+    margin-right: 1vw;
+}
+.header__content .feedback {
+    text-decoration: none;
+    background-color: bisque;
+    font-family: 'Segoe UI';
+    font-size: 9.998px;
+    font-weight: 500;
+    margin-right: 0,1vw;
+    color: black;
+    padding: 0,7vw 1.4vw;
+    border-radius: 3vw;
+}
+.active {
+    color: rgb(170, 30, 30);
+}
+.news {
+    width: 100%;
+}
+.news__content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.news__content__card {
+    width: 300px;
+    background-color: rgb(205, 226, 154);
+    margin-right: 1.389vw;
+    margin: 0.694vw;
+    padding: 20px 40px;
+} 
+.news__content__card:last-of-type {
+    margin-right: 0;
+}
+.news__content__card h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 600;
+}.news__content__card h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 300;
+    margin-top: 1.333vw;
+}
+.news__content__card a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 400;
+
+}

@@ -1,0 +1,14 @@
+{% load static %}
+<header class="header">
+    <div class="header__content">
+        <img src="{% static 'appSites_2/img/live.png' %}" class="logo">
+        <div class="menu">
+            <a class="{% if block_css == 'home' %}active{% endif %}" href="{% url 'url-home' %}">Главная</a>
+            <a class="{% if block_css == 'news' %}active{% endif %}" href="{% url 'url-news' %}">Новости</a>
+            <a class="{% if header.block_css == 'proposal' %}active{% endif %}" href="{% url 'url-proposal' %}">Предложение</a>
+            <a class="{% if block_css == 'contacts' %}active{% endif %}" href="{% url 'url-contacts' %}">Контакты</a>
+        </div>
+        <a href="" class="feedback">Оставить заявку</a>
+    </div>
+
+</header>
