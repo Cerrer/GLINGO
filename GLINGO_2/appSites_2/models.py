@@ -1,27 +1,23 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 import datetime
 
-
-class News(models.Model):
+class ContentBanner(models.Model):
     title = models.CharField(
-        'Заголовок',
-        null=False,
-        max_length=200,
+        verbose_name="Название",
+        max_length=100,
+        null=False
     )
-    content = models.TextField(
-        'Содержание',
+    desc = models.TextField(
+        verbose_name="Описание",
+        null=False
+    )
+    number = models.IntegerField(
+        verbose_name="Порядковый номер",
         null=True,
         blank=True
     )
-    date = models.DateField(
-        'Дата',
-        default=datetime.datetime.today,
-        null=False
-    )
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = 'Новость'
-        verbose_name_plural = 'Новости'
+    def clean(self):              #класс - Чистка
+        super().clean()                   #метод -  чистка
+        if ContentBanner.objects.count() > 3 and not self.pk:
+            raise ValidationError("Вы превысили лимит записей. Всего доступно")

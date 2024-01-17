@@ -1,12 +1,13 @@
-{% extends "appSites_2/base.html" %}
+{% extends "appSites_2/base.html" %}      <!-- расширяться -->
 
-{% block link_home %}active{% endblock %}
+{% block link_home %}
+    active
+{% endblock %}
+
 {% block title %}
-Главная страница
+    Главная страница
 {% endblock %}
 
 {% block content %} 
-    <section>
-        <h1>Главная страница</h1>
-    </section> 
+    {% include 'appSites_2/banner.html' %}
 {% endblock %}
