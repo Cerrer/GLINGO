@@ -21,3 +21,8 @@ class ContentBanner(models.Model):
         super().clean()                   #метод -  чистка
         if ContentBanner.objects.count() > 3 and not self.pk:
             raise ValidationError("Вы превысили лимит записей. Всего доступно")
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = 'контент'
+        verbose_name_plural = 'Банер' 

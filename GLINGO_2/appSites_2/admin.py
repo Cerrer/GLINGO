@@ -3,4 +3,6 @@ from .models import ContentBanner
 
 @admin.register(ContentBanner)
 class ContentBannerAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title', 'desc', 'number']
+    list_display_links = ['title', 'desc']
+    ordering = ['number']
