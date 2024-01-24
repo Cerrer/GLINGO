@@ -10,4 +10,21 @@
 
 {% block content %} 
     {% include 'appSites_2/banner.html' %}
+    <section class="container">
+        <h1 class="container-title">
+            ОБО
+            <span>МНЕ</span>
+        </h1>
+            <div class="aboute-me">
+                <img src="{{about_me.photo.url}}">
+                <div class="aboute-me__content">
+                    <h3>{{about_me.fio}}</h3>
+                    <P>{{about_me.desc}}</P>
+                    <h6>{{about_me.expert}}</h6>
+                </div>
+            </div>
+    </section>
+    {% for con in documents %}
+        <a href="{{doc.file.url}}" target="_blank">{{i.title}}</a>
+    {% endfor %} 
 {% endblock %}

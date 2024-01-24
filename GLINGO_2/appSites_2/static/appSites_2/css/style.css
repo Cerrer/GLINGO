@@ -132,3 +132,46 @@ header {
     width: 0.833vw;
     height: 0.694vw;
 }
+.container{
+    width: 90vw;
+    margin: 4.167vw auto 0 auto;
+}
+.container-title{
+    color: #062840;
+    font-size: 2.222vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.container-title span {
+    color: #22A0D9;
+}
+.aboute-me {
+    width: 100%;
+    background-color: white;
+    border-radius: 0.694vw;
+    box-shadow: 0.347vw 0.347vw 5.556vw 0vw rgba(0, 32, 52, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.778vw;
+}
+.aboute-me img {
+    width: 17.361vw;
+}
+.aboute-me__content {
+    width: 55vw;
+}
+.aboute-me h3 {
+    font-size: 2.222vw;
+    font-weight: 600;
+}
+.aboute-me p {
+    width: 45vw;
+    margin-top: 1vw;
+    line-height: 140%;
+    font-size: 1vw;
+}
+.aboute-me h6 {
+    margin-top: 1vw;
+}
