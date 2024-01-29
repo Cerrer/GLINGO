@@ -175,3 +175,30 @@ header {
 .aboute-me h6 {
     margin-top: 1vw;
 }
+
+.document {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    gap: 0.772vw;
+}
+.document-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.25vw;
+    gap: 0.556vw;
+    color: #1d1d1d;
+    font-weight: 500;
+}
+.document-title svg {
+    width: 0.386vw;
+    height: 0.772vw;
+}
+.document a {
+    background-color: #22A0D9;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.772vw 1.543vw;
+    font-size: 1.235vw;
+    border-radius: 4.63vw;
+}

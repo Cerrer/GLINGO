@@ -24,7 +24,21 @@
                 </div>
             </div>
     </section>
-    {% for con in documents %}
-        <a href="{{doc.file.url}}" target="_blank">{{i.title}}</a>
-    {% endfor %} 
+    <section class="container">
+        <div class="document">
+            <p class="document-title">
+                мои документы
+                <svg xmlns="http://www.w3.org/2000/svg" width="5">
+
+                </svg> 
+            </p>
+            <!-- <a href="">Диплом о профессиональной переподготовке</a>
+            <a href="">Диплом магистратура</a>
+            <a href="">Диплом бакалавра</a>
+            <a href="">Диплом об успеваемости</a> -->
+            {% for document in documents %}
+                <a href="{{document.file.url}}" target="_blank">{{document.title}}</a>
+            {% endfor %} 
+        </div>
+    </section>
 {% endblock %}
