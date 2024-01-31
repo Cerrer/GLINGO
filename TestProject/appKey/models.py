@@ -12,11 +12,30 @@ class Category(models.Model):
         verbose_name = 'категорию'
         verbose_name_plural = 'Категории'
 
-class Product(models.Model):
-    category = models.ForeignKey(       # связывает 
+class Subcategory(models.Model):
+    category = models.ForeignKey(
         Category,
-        on_delete = models.PROTECT,      # CASCADE разрешает удалять категорию и все что с ней связано \ PROTECT пердотвращает удаление связи(категории)
+        on_delete = models.PROTECT,
         null=False,
+        verbose_name = 'Категория'
+    )
+    title = models.CharField(
+        'Название подкатегории',
+        max_length = 100,
+        null=False
+    )
+    def __str__(self):
+        return f'Категория: {self.category.title} | Подкатегория: {self.title}'
+    class Meta:
+        verbose_name = 'подкатегорию'
+        verbose_name_plural = 'подкатегорию'
+
+class Product(models.Model):
+    subcategory = models.ForeignKey(       # связывает 
+        Subcategory,
+        on_delete = models.PROTECT,      # CASCADE разрешает удалять категорию и все что с ней связано \ PROTECT пердотвращает удаление связи(категории)
+        null=True,
+        blank=True,
         verbose_name = 'Категория'
     )
     title = models.TextField(
