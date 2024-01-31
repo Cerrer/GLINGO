@@ -28,7 +28,7 @@ class Subcategory(models.Model):
         return f'Категория: {self.category.title} | Подкатегория: {self.title}'
     class Meta:
         verbose_name = 'подкатегорию'
-        verbose_name_plural = 'подкатегорию'
+        verbose_name_plural = 'подкатегории'
 
 class Product(models.Model):
     subcategory = models.ForeignKey(       # связывает 
@@ -51,6 +51,19 @@ class Product(models.Model):
     price = models.FloatField(
         'Стоимость',
         null=False
+    )
+
+    currency = models.CharField(
+        'Валюта',
+        null=False,
+        choices = [
+            ('RU','Рубль'),
+            ('US','Доллар'),
+            ('EU','Евро'),
+            ('CHINA','Юань')
+        ],
+        max_length = 10,
+        default = 'RU'
     )
     def __str__(self):
         return self.title
