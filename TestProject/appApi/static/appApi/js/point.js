@@ -1,9 +1,30 @@
 $(document).ready(function (){
-    $('.send-btn'). click(function (){
+    function submit_email(e){
+        // console.log(e.target.querySelector('input[name="len]').value)    // 1 способ
+        e.preventDefault();
+        let form = $(this)
+        let len = form.find('input[name="len"]').val()
+        let csrftoken = form.find('input[name="csrfmiddlewaretoken"]').val();
+
+        $.ajax({
+            type: 'POST',
+            url: '/api',
+            data: {
+                csrfmiddlewaretoken: csrftoken,
+                count_email : len,
+                action: 'generate-email'
+            },
+            success: function (response){}
+        })
+    }
+    $('#form_generate_email').submit(submit_email)                // метод записывается с круглыми скобками
+
+    $('.send-btn').click(function (){
         $.ajax({
             type:'POST',
             url: '/api',
             data: {
+                action: 'generate-password',
                 len_password: $('#len_password').val(),
                 count_password: $('#count_password').val(),
                 csrfmiddlewaretoken: $('meta[name="csrf-token"]').attr('content')
@@ -16,6 +37,7 @@ $(document).ready(function (){
                     section.appendChild(p)
                 } 
             },
+            
             error: function(response){}
         })
     })
