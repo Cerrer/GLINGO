@@ -12,6 +12,7 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
+    'tinymce',
     'appPublication',
     'appAnalytics',
     'django.contrib.admin',
@@ -21,6 +22,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+TINYMCE_DEFAULT_CONFIG = {
+    "plugins": "advlist,autolink,lists,link,image,charmap,print,preview,anchor,searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,paste,",# plugins  
+    "toolbar":"undo redo | formatselect | image |", #toolbar
+    "height": 500, #texteditor height
+    "width": 1000, #texteditor height
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
