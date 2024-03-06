@@ -2,7 +2,7 @@ tinymce.init({
     selector: '#EditContent',
     height: 500,
     plugins: [
-        'advlist','autolink','checklist',
+        'advlist','autolink',
         'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
         'fullscreen','insertdatetime','media','table','help','wordcount'
       ],
@@ -21,7 +21,21 @@ $(document).ready(function(){
                 csrfmiddlewaretoken: form.find('input[name="csrfmiddlewaretoken"]').val(),
                 content: form.find('textarea[name="content"]').val()
             },
-            success: function (response){},
+            success: function (response){
+                if (response.status == 'ok') {
+                    // let div = document.querySelector('.story-links')
+                    // let a = document.createElement('a') 
+                    // a.textContent = `перейдите по ссылке: ${response.url}`  // тильда ( вызывает ссылку в нутри текста )
+                    // a.href = response.url
+                    // div.appendChild(a)
+
+                    let div = $('.story-links')
+                    let content = $(`<p><a href="${response.url}">Перейдите по ссылке: ${response.url}</a></p>`)
+                    div.append(content)
+                } else{
+                    alert("Ссылка на публикацю не доступна, повторите позже")
+                }
+            },
             error: function (response){}
         })
     })

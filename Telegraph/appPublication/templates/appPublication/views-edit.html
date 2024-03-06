@@ -2,9 +2,13 @@
 
 {% block title %}Редактирование публикации{% endblock %}
 {% block content %}
+    <h1>Публикации статьи</h1>
     <form action="" method="post" id="FormContent">
         {% csrf_token %}
         <textarea id="EditContent" name="content">Начните вводить текст...</textarea>
         <button>Опубликовать</button>
     </form>
+    <h1>Ваша публикация</h1>
+    <div class="story-links">
+    </div>
 {% endblock %}
