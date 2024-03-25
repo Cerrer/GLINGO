@@ -17,12 +17,19 @@
             </div>
         {% endif %}   
     {% endfor %}
-    <div class="back">
-        <div>
-            <p>виноград</p>
-            <button data-product-id="">Удалить</button>
-        </div>
-    </div>
+    <div class="back"></div>
+    <!-- Пост запрос методом джанго -->
+    <form action="{% url 'urlMethodDjangoPost' %}" method="post">
+        {% csrf_token %}                  <!--  - безопасность, защитаот ботов -->
+        <input name="janr" type="text" placeholder="Введите жанр">
+        <button>Отправить</button>
+    </form>
+    <!-- Пост запрос методом ажакс -->
+    <form action="{% url 'urlMethodAjaxPost' %}" method="post" id="FormAjax">
+        {% csrf_token %}
+        <textarea name="desc" id="" cols="30" rows="10"></textarea>
+        <button>Отправить</button>
+    </form>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="{% static 'appShop/js/script.js' %}"></script>
 </body>
