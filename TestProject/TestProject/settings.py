@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'appApi',
     'appAuth',
     'appShop',
+    'appRenderHtml',
     'admin_interface',
     'colorfield',
     'django.contrib.admin',

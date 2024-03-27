@@ -1,0 +1,33 @@
+{% extends 'appRenderHtml/base.html' %}
+
+{% block title %}Домашняя страница{% endblock %}
+
+{% block content %}
+    {% comment %}
+        {% include 'appRenderHtml/header.html' %}
+    {% endcomment %}
+    <p>
+        {{request.session.session_key}}
+    </p>
+    <p>
+        {{request.user}}
+        {{request.last_name}}
+        {{request.first_name}}
+        {{request.password}}
+        {{request.email}}
+    </p>
+     <p>
+        {% if products.count == 4 %}
+            <p>Всего 4 записи</p>
+        {% elif products.cont == 3 %}
+            <p>Всего 3 записи</p>    
+        {% else %}   
+            {% for product in products %}
+                <p>
+                    {{product.price}}
+                </p>
+
+            {% endfor %}
+        {% endif %}
+
+{% endblock %}
