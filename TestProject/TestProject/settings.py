@@ -16,18 +16,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-eq$w_@-iol@(y-bo_0k*wcp_)f_ple=s@oejrlzzk82oz_%k%w'
 
-DEBUG=True
 
 ALLOWED_HOSTS = []
-
-# APPEND_SLASH = False
+DEBUG=True
 
 INSTALLED_APPS = [
     'appKey',
     'appApi',
     'appAuth',
     'appShop',
-    'appMethodAuth',
+    'appRenderHtml',
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
